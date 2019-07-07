@@ -21,14 +21,6 @@ class SuggestArea extends Component {
     }
   }
 
-  openSuggestions = (event) => {
-    if (event.target.id !== 'search-input') {
-      return this.setState({ suggestionsOpen: false })
-    }
-
-    return this.setState({ suggestionsOpen: true })
-  }
-
   returnSuggestions = () => {
     if (this.props.state.results.length > 0) {
       if (this.props.state.searchvalue === '') {
@@ -36,7 +28,7 @@ class SuggestArea extends Component {
       }
 
       return this.props.state.results.map(result => {
-        if (result.profession && result.profession.includes(this.props.state.searchvalue)) {
+        if (result.profession && result.profession.toLowerCase().includes(this.props.state.searchvalue.toLowerCase())) {
           return <SuggestCard 
             key={result.id} 
             name={result.name}
@@ -45,7 +37,7 @@ class SuggestArea extends Component {
             state={result.state}/>
         }
 
-        if (result.role && result.role.includes(this.props.state.searchvalue)) {
+        if (result.role && result.role.toLowerCase().includes(this.props.state.searchvalue.toLowerCase())) {
           return <SuggestCard 
             key={result.id}
             companyName={result.companyName}
@@ -57,7 +49,6 @@ class SuggestArea extends Component {
     }
   }
   
-
   render() {
     return (
       <div style={{

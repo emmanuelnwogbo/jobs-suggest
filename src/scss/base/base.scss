@@ -61,6 +61,10 @@ body {
       overflow: scroll;
       overflow-x: hidden;
       display: none;
+
+      &:focus {
+        display: block
+      }
     }
   }
 }
