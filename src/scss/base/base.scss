@@ -12,5 +12,55 @@ html {
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: hidden; 
+}
+
+.container {
+  
+  &__top {
+    position: fixed;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    & h1 {
+      font-weight: 900;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      color: rgba(48, 51, 107,1.0);
+    }
+
+    &__inputarea {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    & input {
+      width: 48%;
+      border: rgba(48, 51, 107,1.0) solid 1px;
+      box-shadow: rgba(48, 51, 107,1.0) 0px 1rem 17rem;
+
+      &:focus ~ .container__top__suggestions {
+        display: block;
+      }
+    }
+
+    &__suggestions {
+      width: 48%;
+      margin-top: .3rem;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+      border-radius: 0 0 .5rem .5rem;
+      overflow: hidden;    
+      max-height: 40vh;
+      overflow: scroll;
+      overflow-x: hidden;
+      display: none;
+    }
+  }
 }
