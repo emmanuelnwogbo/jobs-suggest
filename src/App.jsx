@@ -24,7 +24,7 @@ class App extends Component {
           minHeight: '100vh',
         }}>
           <div className={'container__top'}>
-            <h1>Jobotron.</h1>
+            <h1>JoboSearch.</h1>
             <SuggestArea />
           </div>
         </div>
